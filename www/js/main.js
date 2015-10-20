@@ -12,9 +12,6 @@ function onDeviceReady() {
 	// Now safe to use device APIs
 	getState();
 	setInterval(getState, interval);
-
-
-
 }
 
 function getState() {
@@ -46,11 +43,18 @@ function getState() {
 function notify(state, heartRate) {
 	if (heartRate > 75 && (state == 'Sleeping' || state == 'Walking')) {
 		vibrate();
+		playBeep();
 	}
 }
 
-// Vibrate for 2 seconds
+// Vibrate for 1 seconds
 //
 function vibrate() {
 	navigator.notification.vibrate(1000);
+}
+
+// Beep three times
+//
+function playBeep() {
+    navigator.notification.beep(3);
 }
