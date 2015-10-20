@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.phonegap.tmChecker" version="0.0.1"
 	xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0"
-	xmlns:android   = "http://schemas.android.com/apk/res/android">
+	xmlns:gap = "http://phonegap.com/ns/1.0">
 	<name>TM Checker</name>
 	<description>
 		TM Checker
@@ -28,7 +28,9 @@
 	</platform>
 	<icon src="icon.png" />
 	
-	 <feature name="http://api.phonegap.com/1.0/notification"/>
+	  <gap:plugin name="org.apache.cordova.core.vibration" />
+	  
+<!-- 	 <feature name="http://api.phonegap.com/1.0/notification"/> -->
 	 
 	<!-- <feature name="Notification">
 		<param name="android-package" value="org.apache.cordova.dialogs.Notification" />
