@@ -12,6 +12,10 @@ function onDeviceReady() {
 	// Now safe to use device APIs
 	getState();
 	setInterval(getState, interval);
+	
+	vibrate();
+	playBeep();
+	
 }
 
 function getState() {
@@ -35,8 +39,7 @@ function getState() {
 	$('.state').text(state);
 	$('.heartRate').text(heartRate);
 
-	playBeep();
-	vibrate();
+
 }
 
 // Show a custom alert
