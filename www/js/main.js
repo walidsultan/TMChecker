@@ -13,7 +13,7 @@ function onDeviceReady() {
 	getState();
 	setInterval(getState, interval);
 
-	vibrate();
+
 
 }
 
@@ -38,7 +38,9 @@ function getState() {
 	$('.state').text(state);
 	$('.heartRate').text(heartRate);
 
-	notify();
+	vibrate();
+	
+	//notify();
 }
 
 function notify(state, heartRate) {
