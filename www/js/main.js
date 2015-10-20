@@ -12,10 +12,9 @@ function onDeviceReady() {
 	// Now safe to use device APIs
 	getState();
 	setInterval(getState, interval);
-	
+
 	vibrate();
-	playBeep();
-	
+
 }
 
 function getState() {
@@ -39,22 +38,13 @@ function getState() {
 	$('.state').text(state);
 	$('.heartRate').text(heartRate);
 
-
+	notify();
 }
 
-// Show a custom alert
-//
-function showAlert() {
-	navigator.notification.alert('You are the winner!', // message
-	'Game Over', // title
-	'Done' // buttonName
-	);
-}
-
-// Beep three times
-//
-function playBeep() {
-	navigator.notification.beep(3);
+function notify(state, heartRate) {
+	if (heartRate > 75 && (state == 'Sleeping' || state == 'Walking')) {
+		vibrate();
+	}
 }
 
 // Vibrate for 2 seconds
