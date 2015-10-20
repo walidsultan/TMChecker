@@ -38,9 +38,9 @@ function getState() {
 	$('.state').text(state);
 	$('.heartRate').text(heartRate);
 
-	vibrate();
+	//vibrate();
 	
-	//notify();
+	notify();
 }
 
 function notify(state, heartRate) {
