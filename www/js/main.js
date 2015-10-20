@@ -40,7 +40,7 @@ function getState() {
 
 	//vibrate();
 	
-	notify();
+	notify(state,heartRate);
 }
 
 function notify(state, heartRate) {
