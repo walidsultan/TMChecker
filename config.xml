@@ -20,7 +20,6 @@
 	<platform name="android">
 		<allow-intent href="market:*" />
 		
-		<uses-permission android:name="android.permission.VIBRATE" />
 	</platform>
 	<platform name="ios">
 		<allow-intent href="itms:*" />
