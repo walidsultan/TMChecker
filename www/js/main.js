@@ -42,7 +42,8 @@ function getState() {
 
 function notify(state, heartRate) {
 	if (heartRate > 75 && (state == 'Sleeping' || state == 'Walking')) {
-		vibrate();
+		//vibrate();
+		showAlert();
 	}
 }
 
@@ -51,3 +52,12 @@ function notify(state, heartRate) {
 function vibrate() {
 	navigator.notification.vibrate(1000);
 }
+
+function showAlert() {
+        navigator.notification.alert(
+            'Time to meditate',  // message
+            null,         // callback
+            'TM Checker',            // title
+            'Ok'                  // buttonName
+        );
+    }
