@@ -1,4 +1,4 @@
-var interval = 5000;
+var interval = 20000;
 
 var maxHeartRate = 140;
 var minHeartRate = 55;
@@ -22,13 +22,13 @@ function getState() {
 	var state = '';
 	switch (stateNumber) {
 	case 0:
-		state = 'Sleeping';
+		state = 'Asleep';
 		break;
 	case 1:
-		state = 'Walking';
+		state = 'Awake';
 		break;
 	case 2:
-		state = 'Running';
+		state = 'Exercising';
 		break;
 	}
 
@@ -41,7 +41,7 @@ function getState() {
 }
 
 function notify(state, heartRate) {
-	if (heartRate > 75 && (state == 'Sleeping' || state == 'Walking')) {
+	if (heartRate > 85 && (state == 'Asleep' || state == 'Awake')) {
 		//vibrate();
 		showAlert();
 	}
@@ -55,7 +55,7 @@ function vibrate() {
 
 function showAlert() {
         navigator.notification.alert(
-            'Time to meditate',  // message
+            'Your heart rate is too high, consider visiting a doctor and check your meditation.',  // message
             null,         // callback
             'TM Checker',            // title
             'Ok'                  // buttonName
